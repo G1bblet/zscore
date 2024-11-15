@@ -96,24 +96,40 @@ def test_z_score_function():
 # participated in the group assignment work           #
 #######################################################
 
-def z_score(x, mu, sigma):
+def additional_tests():
     """
-    x is the population item
-    mu is the population mean
-    sigma is the population standard deviation
-    
-    Returns the z-score of x
+    Test case 1: z-score of the smallest value in population3
     """
-    
-    # Participating group member names go in this comment              
+    pop3_least = least(population3)
+    pop3_avg = mean(population3)
+    pop3_sd = stdev(population3, pop3_avg)
+    least_z_score_p3 = z_score(pop3_least, pop3_avg, pop3_sd)
 
-    # Your code goes between this comment and the return statement
-    
-    return (x - mu) / sigma# Place the calculated z-score result between the return statement and this comment so it will be returned by the z_score function
+    """
+    Test case 2: z-score for the mean value of population2
+    """
+    pop2_avg = mean(population2)
+    pop2_sd = stdev(population2, pop2_avg)
+    mean_z_score_p2 = z_score(pop2_avg, pop2_avg, pop2_sd)
+
+    """
+    Test case 3: z-score of population1 with a value of 1 subtracted from the mean
+    """
+    pop1_avg = mean(population1)
+    pop1_sd = stdev(population1, pop1_avg)
+    # Subtract a value from the mean
+    subtracted_value = pop1_avg - 1
+    z_score_subtracted_value = z_score(subtracted_value, pop1_avg, pop1_sd)
+
+
+    print("The z-score of the smallest value in population3 is", least_z_score_p3)
+    print("The z-score of the mean population2 is", mean_z_score_p2)
+    print("The z-score of population1 after subtracting 1 from the mean is", z_score_subtracted_value)
 
 def main():
     # Main Function
     test_z_score_function()
+    additional_tests() # Added this call to run additional test cases
     return None
 
 if __name__ == '__main__':
