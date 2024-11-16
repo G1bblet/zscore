@@ -80,13 +80,14 @@ def test_z_score_function():
     
     print("The z-score of the mean of population1 is", mean_z_score_p1)
     print("The z-score of the greatest value of population2 is", greatest_z_score_p2)
+
   
 
 #######################################################
 # YOUR CODE GOES BELOW THIS BOX.                      #
 #                                                     #
 # Complete the following z_score function.            #
-# You may call the functions above,	              #
+# You may call the functions above,	                  #
 #   but do not define any others (except for testing) #
 # You may use arithmetic operators                    #
 #  (i.e., +, -, *, **, /) but not Python Boolean      #
@@ -95,6 +96,42 @@ def test_z_score_function():
 # Be sure to include names of the group members that  #
 # participated in the group assignment work           #
 #######################################################
+
+def z_score(x, mu, sigma):
+    """
+    x is the population item
+    mu is the population mean
+    sigma is the population standard deviation
+    
+    Returns the z-score of x
+    """
+    
+    # Written by: Jennifer Ho & Jacob Bullens          
+
+    # Your code goes between this comment and the return statement
+    
+    return (x - mu) / sigma# Place the calculated z-score result between the return statement and this comment so it will be returned by the z_score function
+
+
+################################################################################################
+# Test Plans for z-score function
+#
+# Test case 1: z-score of the smallest value in population 3. 
+# Description: calculate the z-score for the smallest value in population3.
+# Expected outcome: A calculated z-score based on the smallest value which should be negative.
+# Actual outcome: The z-score of the smallest value in population3 is -1.6712580435934667
+#
+# Test case 2: z-score for the mean value of population 2.
+# Description: calculate the z-score for the mean of population 2.
+# Expected outcome: Calculated z-score for the mean value which should be 0.
+# Actual outcome: The z-score of the mean population2 is 0.0
+# 
+# Test case 3: z-score of population 1 with a value of 1 subtracted from the mean.
+# Description: calculate the z-score of population 1 after subtracting 1 from its mean.
+# Expected outcome: A z-score that is slightly negative. 
+# Actual outcome: The z-score of population1 after subtracting 1 from the mean is -0.03575223788796744
+################################################################################################
+
 
 def additional_tests():
     """
@@ -128,9 +165,8 @@ def additional_tests():
 
 def main():
     # Main Function
-    test_z_score_function()
     additional_tests() # Added this call to run additional test cases
-    return None
+
 
 if __name__ == '__main__':
     main()
